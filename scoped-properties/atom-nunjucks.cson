@@ -1,0 +1,4 @@
+'.text.html.nunjucks':
+  'editor':
+    'commentStart': '{# '
+    'commentEnd': ' #}'

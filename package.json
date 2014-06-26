@@ -1,9 +1,9 @@
 {
-  "name": "atom-nunjucks",
+  "name": "language-nunjucks",
   "version": "0.0.1",
   "private": true,
   "description": "Syntax highlighting for nunjucks templates.",
-  "repository": "https://github.com/livhaas/atom-nunjucks",
+  "repository": "https://github.com/livhaas/language-nunjucks",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

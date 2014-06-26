@@ -1,6 +1,6 @@
 {
   "name": "language-nunjucks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Syntax highlighting for nunjucks templates.",
   "repository": "https://github.com/livhaas/language-nunjucks",

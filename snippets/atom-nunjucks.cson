@@ -29,6 +29,9 @@
   'If':
     'prefix': 'if'
     'body': '{% if ${1:expr} %}\n\t$2\n{% endif %}'
+  'Set':
+    'prefix': 'set'
+    'body': '{% set ${1:var} = ${2:value} %}$0'
   'Macro':
     'prefix': 'macro'
     'body': '{% macro ${1:name}(${2:args}) %}\n\t$3\n{% endmacro %}'

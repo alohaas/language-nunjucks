@@ -29,9 +29,21 @@
   'If':
     'prefix': 'if'
     'body': '{% if ${1:expr} %}\n\t$2\n{% endif %}'
+  'If Else':
+    'prefix': 'ife'
+    'body': '{% if ${1:expr} %}\n\t$2\n{% else %}\n\t$3\n{% endif %}'
   'Set':
     'prefix': 'set'
     'body': '{% set ${1:var} = ${2:value} %}$0'
   'Macro':
     'prefix': 'macro'
     'body': '{% macro ${1:name}(${2:args}) %}\n\t$3\n{% endmacro %}'
+  'Import':
+    'prefix': 'import'
+    'body': '{% import ${1:"${2:template}"} as ${3:var} %}$0'
+  'From Import':
+    'prefix': 'from'
+    'body': '{% from ${1:"${2:template}"} import ${3:macro} as ${4:var} %}$0'
+  'Raw':
+    'prefix': 'raw'
+    'body': '{% raw %}\n\t$1\n{% endraw %}'

@@ -2,11 +2,28 @@
   "name": "language-nunjucks",
   "version": "2.2.0",
   "private": true,
-  "description": "Syntax highlighting for nunjucks templates.",
-  "repository": "https://github.com/alohaas/language-nunjucks",
+  "description": "Syntax highlighting for nunjucks templates in the Atom editor.",
+  "keywords": [
+    "language",
+    "nunjucks"
+  ],
+  "author": "alohaas <olivia@duckduckgo.com> (https://github.com/alohaas)",
+  "contributors": [
+    "silvenon (https://github.com/silvenon)",
+    "RodrigoEspinosa (https://github.com/RodrigoEspinosa)",
+    "joelbschwartz (https://github.com/joelbschwartz)"
+  ],
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "http://atom.github.io/language-nunjucks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alohaas/language-nunjucks"
+  },
+  "bugs": {
+    "url": "https://github.com/alohaas/language-nunjucks/issues"
   },
   "dependencies": {}
 }

@@ -50,3 +50,15 @@
   'Call':
     'prefix': 'call'
     'body': '{% call ${1:macro} %}\n\t$2\n{% endcall %}'
+  'Elif':
+    'prefix': 'elif'
+    'body': '{% elif ${1:expr} %}\n\t$2'
+  'Else':
+    'prefix': 'else'
+    'body': '{% else ${1:expr} %}\n\t$2'
+  'Alt Variable':
+    'prefix': 'var'
+    'body': '{{ ${1:var} }}'
+  'Super':
+    'prefix': 'super'
+    'body': '{{ super() }}'

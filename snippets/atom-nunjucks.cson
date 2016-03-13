@@ -47,3 +47,6 @@
   'Raw':
     'prefix': 'raw'
     'body': '{% raw %}\n\t$1\n{% endraw %}'
+  'Call':
+    'prefix': 'call'
+    'body': '{% call ${1:macro} %}\n\t$2\n{% endcall %}'

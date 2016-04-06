@@ -2,3 +2,289 @@
   'editor':
     'commentStart': '{# '
     'commentEnd': ' #}'
+'autocomplete':
+    'symbols':
+      'expressions':
+        'selector': 'nunjucks.expressions'
+        'typePriority': 1
+        'suggestions': [{
+          'type': 'type'
+          'snippet': 'and'
+          'rightLabel': 'Logic'
+          'description': 'Logical and operator.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#logic'
+        }, {
+          'type': 'type'
+          'snippet': 'or'
+          'rightLabel': 'Logic'
+          'description': 'Logical or operator.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#logic'
+        }, {
+          'type': 'type'
+          'snippet': 'not'
+          'rightLabel': 'Logic'
+          'description': 'Logical not operator.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#logic'
+        # Autoescaping see http://mozilla.github.io/nunjucks/templating.html#autoescaping
+        }, {
+          'type': 'tag'
+          'snippet': 'safe'
+          'rightLabel': 'Autoescape'
+          'description': 'If autoescaping is turned on in the environment, all output will automatically be escaped for safe output. To manually mark output as safe, use the safe filter.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#autoescaping'
+        }, {
+          'type': 'tag'
+          'snippet': 'escape'
+          'rightLabel': 'Autoescape'
+          'description': 'If autoescaping is turned off, all output will be rendered as it is. You can manually escape variables with the escape filter.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#autoescaping'
+        # Global Functions see http://mozilla.github.io/nunjucks/templating.html#global-functions
+        }, {
+          'type': 'method'
+          'snippet': 'range(${1:start}, ${2:stop}, ${3:step})'
+          'rightLabel': 'Global Function'
+          'description': 'range([start], stop, [step]) If you need to iterate over a fixed set of numbers, range generates the set for you. The numbers begin at start (default 0) and increment by step (default 1) until it reaches stop, not including it.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#range-start-stop-step'
+        }, {
+          'type': 'method'
+          'snippet': 'cycler(${1:item1}, ${2:itemN})'
+          'rightLabel': 'Global Function'
+          'description': 'An easy way to rotate through several values is to use cycler, which takes any number of arguments and cycles through them.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#cycler-item1-item2-itemn'
+        }, {
+          'type': 'method'
+          'snippet': 'joiner(${1:separator})'
+          'rightLabel': 'Global Function'
+          'description': 'When combining multiple items, it\'s common to want to delimit them with something like a comma, but you don\'t want to output the separator for the first item. The joiner class will output separator (default ",") whenever it is called except for the first time'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#joiner-separator'
+        # Builtin Filters http://mozilla.github.io/nunjucks/templating.html#builtin-filters
+        }, {
+          'type': 'builtin'
+          'snippet': 'default(${1:value}, ${2:default}, ${3:boolean})'
+          'rightLabel': 'Builtin Filter'
+          'description': 'If value is strictly undefined, return default, otherwise value. If boolean is true, any JavaScript falsy value will return default (false, "", etc). Also, aliased as d'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#default-value-default-boolean'
+        }, {
+          'type': 'builtin'
+          'snippet': 'sort(${1:arr}, ${2:reverse}, ${3:caseSens}, ${4:attr})'
+          'rightLabel': 'Builtin Filter'
+          'description': 'Sort arr with JavaScript\'s arr.sort function. If reverse is true, result will be reversed. Sort is case-insensitive by default, but setting caseSens to true makes it case-sensitive. If attr is passed, will compare attr from each item.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#sort-arr-reverse-casesens-attr'
+        }, {
+          'type': 'builtin'
+          'snippet': 'striptags(${1:value}, ${2:preserve_linebreaks})'
+          'rightLabel': 'Builtin Filter'
+          'description': 'Analog of jinja\'s striptags. If preserve_linebreaks is false (default), strips SGML/XML tags and replaces adjacent whitespace with one space. If preserve_linebreaks is true, normalizes whitespace, trying to preserve original linebreaks. Use second behavior if you want to pipe {{ text | striptags | nl2br }}. Use default one otherwise.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#striptags-value-preserve_linebreaks'
+        }, {
+          'type': 'builtin'
+          'snippet': 'dump(${1:object})'
+          'rightLabel': 'Builtin Filters'
+          'description': 'Call JSON.stringify on an object and dump the result into the template. Useful for debugging: {{ foo | dump }}.'
+          'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#dump-object'
+          # More Filters http://mozilla.github.io/nunjucks/templating.html#more-filters
+        }, {
+          'type': 'function'
+          'snippet': 'abs(${1:number})'
+          'rightLabel': 'Filter'
+          'description': 'Return the absolute value of the argument.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/dev/templates/#abs'
+        }, {
+          'type': 'tag'
+          'snippet': 'batch(${1:value}, ${2:linecount}, ${3:fill_with})'
+          'rightLabel': 'Filter'
+          'description': 'A filter that batches items. It works pretty much like slice just the other way round. It returns a list of lists with the given number of items. If you provide a second parameter this is used to fill up missing items. '
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#batch'
+        }, {
+          'type': 'tag'
+          'snippet': 'capitalize(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Capitalize a value. The first character will be uppercase, all others lowercase.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#capitalize'
+        }, {
+          'type': 'tag'
+          'snippet': 'center(${1:number}, ${2:width})'
+          'rightLabel': 'Filter'
+          'description': 'Centers the value in a field of a given width.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#center'
+        }, {
+          'type': 'tag'
+          'snippet': 'dictsort(${1:number}, ${2:case_sensitive}, ${3:by})'
+          'rightLabel': 'Filter'
+          'description': 'Sort a dict and yield (key, value) pairs. Because python dicts are unsorted you may want to use this function to order them by either key or value'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#dictsort'
+        }, {
+          'type': 'tag'
+          'snippet': 'escape(${1:string})'
+          'rightLabel': 'Filter'
+          'description': 'Convert the characters &, <, >, ‘, and ” in string s to HTML-safe sequences. Use this if you need to display text that might contain such characters in HTML. Marks return value as markup string.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#escape'
+        }, {
+          'type': 'tag'
+          'snippet': 'float(${1:number})'
+          'rightLabel': 'Filter'
+          'description': ''
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#float'
+        }, {
+          'type': 'tag'
+          'snippet': 'first(${1:value}, ${2:default})'
+          'rightLabel': 'Filter'
+          'description': 'Convert the value into a floating point number. If the conversion doesn’t work it will return 0.0. You can override this default using the first parameter.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#first'
+        }, {
+          'type': 'tag'
+          'snippet': 'groupby(${1:value}, ${2:attribute})'
+          'rightLabel': 'Filter'
+          'description': 'Group a sequence of objects by a common attribute.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#groupby'
+        }, {
+          'type': 'tag'
+          'snippet': 'indent(${1:string}, ${2:width}, ${3:indentfirst})'
+          'rightLabel': 'Filter'
+          'description': 'Return a copy of the passed string, each line indented by no. of spaces as indicated by width parameter. The first line is not indented. If you want to change the number of spaces or indent the first line too you can pass additional parameters to the filter:'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#indent'
+        }, {
+          'type': 'tag'
+          'snippet': 'int(${1:value}, ${2:default}, ${3:base})'
+          'rightLabel': 'Filter'
+          'description': 'Convert the value into an integer. If the conversion doesn’t work it will return 0. You can override this default using the first parameter. You can also override the default base (10) in the second parameter, which handles input with prefixes such as 0b, 0o and 0x for bases 2, 8 and 16 respectively.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#int'
+        }, {
+          'type': 'tag'
+          'snippet': 'join(${1:value}, ${2:d}, ${3:attribute})'
+          'rightLabel': 'Filter'
+          'description': 'Return a string which is the concatenation of the strings in the sequence. The separator between elements is an empty string per default, you can define it with the optional parameter:'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#join'
+        }, {
+          'type': 'tag'
+          'snippet': 'last(${1:sequence})'
+          'rightLabel': 'Filter'
+          'description': 'Return the last item of a sequence.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#last'
+        }, {
+          'type': 'tag'
+          'snippet': 'length(${1:object})'
+          'rightLabel': 'Filter'
+          'description': 'Return the number of items of a sequence or mapping. Aliases: count'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#length'
+        }, {
+          'type': 'tag'
+          'snippet': 'list(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Convert the value into a list. If it was a string the returned list will be a list of characters.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#list'
+        }, {
+          'type': 'tag'
+          'snippet': 'lower(${1:string})'
+          'rightLabel': 'Filter'
+          'description': 'Convert a value to lowercase.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#lower'
+        }, {
+          'type': 'tag'
+          'snippet': 'random(${1:sequence})'
+          'rightLabel': 'Filter'
+          'description': 'Return a random item from the sequence.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#random'
+        }, {
+          'type': 'tag'
+          'snippet': 'rejectattr(${1:test})'
+          'rightLabel': 'Filter'
+          'description': 'Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding but only in the single-argument form.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#rejectattr'
+        }, {
+          'type': 'tag'
+          'snippet': 'replace(${1:string}, ${2:old}, ${3:new}, ${4:count})'
+          'rightLabel': 'Filter'
+          'description': 'Return a copy of the value with all occurrences of a substring replaced with a new one. The first argument is the substring that should be replaced, the second is the replacement string. If the optional third argument count is given, only the first count occurrences are replaced. the first argument can take a JS regular expression'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#replace'
+        }, {
+          'type': 'tag'
+          'snippet': 'reverse(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Reverse the object or return an iterator that iterates over it the other way round.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#reverse'
+        }, {
+          'type': 'tag'
+          'snippet': 'round(${1:value}, ${2:precision}, ${3:method})'
+          'rightLabel': 'Filter'
+          'description': 'Round the number to a given precision. The first parameter specifies the precision (default is 0), the second the rounding method.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#round'
+        }, {
+          'type': 'tag'
+          'snippet': 'safe(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Mark the value as safe which means that in an environment with automatic escaping enabled this variable will not be escaped.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#safe'
+        }, {
+          'type': 'tag'
+          'snippet': 'selectattr(${1:test})'
+          'rightLabel': 'Filter'
+          'description': 'Filters a sequence of objects by applying a test to an attribute of an object and only selecting the ones with the test succeeding. only the single-argument form'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#selectattr'
+        }, {
+          'type': 'tag'
+          'snippet': 'slice(${1:value}, ${2:slices}, ${3:fill_with})'
+          'rightLabel': 'Filter'
+          'description': 'Slice an iterator and return a list of lists containing those items. Useful if you want to create a div containing three ul tags that represent columns.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#slice'
+        }, {
+          'type': 'tag'
+          'snippet': 'string($(1:{object}))'
+          'rightLabel': 'Filter'
+          'description': 'Make a string unicode if it isn’t already. That way a markup string is not converted back to unicode.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#string'
+        }, {
+          'type': 'tag'
+          'snippet': 'sum(${1:iterable}, ${2:attribute}, ${3:start})'
+          'rightLabel': 'Filter'
+          'description': 'Returns the sum of a sequence of numbers plus the value of parameter ‘start’ (which defaults to 0). When the sequence is empty it returns start. It is also possible to sum up only certain attributes'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/dev/templates/#sum'
+        }, {
+          'type': 'tag'
+          'snippet': 'title(${1:string})'
+          'rightLabel': 'Filter'
+          'description': 'Return a titlecased version of the value. I.e. words will start with uppercase letters, all remaining characters are lowercase.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#title'
+        }, {
+          'type': 'tag'
+          'snippet': 'trim(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Strip leading and trailing whitespace.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#trim'
+        }, {
+          'type': 'tag'
+          'snippet': 'truncate(${1:string}, ${2:length}, ${3:killwords}, ${4:end})'
+          'rightLabel': 'Filter'
+          'description': 'Return a truncated copy of the string. The length is specified with the first parameter which defaults to 255. If the second parameter is true the filter will cut the text at length. Otherwise it will discard the last word. If the text was in fact truncated it will append an ellipsis sign ("..."). If you want a different ellipsis sign than "..." you can specify it using the third parameter.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#truncate'
+        }, {
+          'type': 'tag'
+          'snippet': 'upper(${1:string})'
+          'rightLabel': 'Filter'
+          'description': 'Convert a value to uppercase.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#upper'
+        }, {
+          'type': 'tag'
+          'snippet': 'urlencode(${1:value})'
+          'rightLabel': 'Filter'
+          'description': 'Escape strings for use in URLs (uses UTF-8 encoding). It accepts both dictionaries and regular strings as well as pairwise iterables.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#urlencode'
+        }, {
+          'type': 'tag'
+          'snippet': 'urlize(${1:value}, ${2:trim_url_limit}, ${3:nofollow}, ${4:target})'
+          'rightLabel': 'Filter'
+          'description': 'Converts URLs in plain text into clickable links.If you pass the filter an additional integer it will shorten the urls to that number. Also a third argument exists that makes the urls “nofollow”.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#urlize'
+        }, {
+          'type': 'tag'
+          'snippet': 'wordcount(${1:string})'
+          'rightLabel': 'Filter'
+          'description': 'Count the words in that string.'
+          'descriptionMoreURL': 'http://jinja.pocoo.org/docs/templates/#wordcount'
+        }]
+        # This is a sample tag just in case someone wants to add more to it
+        # More Filters
+        #   'type': 'tag'
+        #   'snippet': ''
+        #   'description': ''
+        #   'descriptionMoreURL': ''

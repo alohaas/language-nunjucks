@@ -25,7 +25,7 @@
     'body': '{% asyncEach ${1:item} in ${2:sequence} %}\n\t$3\n{% endeach %}'
   'asyncAll':
     'prefix': 'asyncAll'
-    'body': '{% asyncAll ${1:item} in ${2:sequence} %}\n\t$3\n{% endeach %}'
+    'body': '{% asyncAll ${1:item} in ${2:sequence} %}\n\t$3\n{% endall %}'
   'If':
     'prefix': 'if'
     'body': '{% if ${1:expr} %}\n\t$2\n{% endif %}'

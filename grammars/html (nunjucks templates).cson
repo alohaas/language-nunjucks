@@ -4,8 +4,8 @@
   'njk'
 ]
 'firstLineMatch': '^{% extends ["\'][^"\']+["\'] %}'
-'foldingStartMarker': '(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(block|filter|for|if|macro|raw))'
-'foldingStopMarker': '(</(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw)\\s*%})'
+'foldingStartMarker': '(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(block|filter|for|if|macro|raw|asyncEach|asyncAll|call))'
+'foldingStopMarker': '(</(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw|endeach|endall|endcall)\\s*%})'
 'name': 'HTML (Nunjucks Templates)'
 'patterns': [
   {

@@ -1,6 +1,6 @@
 'fileTypes': []
-'foldingStartMarker': '({%\\s*(block|for|if|macro|raw|asyncEach|asyncAll))'
-'foldingStopMarker': '({%\\s*(endblock|endfor|endif|endmacro|endeach|endall)\\s*%})'
+'foldingStartMarker': '({%\\s*(block|filter|for|if|macro|raw|asyncEach|asyncAll))'
+'foldingStopMarker': '({%\\s*(endblock|endfilter|endfor|endif|endmacro|endeach|endall)\\s*%})'
 'name': 'Nunjucks Templates'
 'patterns': [
   {

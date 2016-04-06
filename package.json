@@ -1,6 +1,6 @@
 {
   "name": "language-nunjucks",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "description": "Syntax highlighting for nunjucks templates in the Atom editor.",
   "keywords": [
@@ -11,7 +11,8 @@
   "contributors": [
     "silvenon (https://github.com/silvenon)",
     "RodrigoEspinosa (https://github.com/RodrigoEspinosa)",
-    "joelbschwartz (https://github.com/joelbschwartz)"
+    "joelbschwartz (https://github.com/joelbschwartz)",
+    "dkebler (https://github.com/dkebler)"
   ],
   "license": "MIT",
   "engines": {

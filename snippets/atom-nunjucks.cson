@@ -2,63 +2,129 @@
   'Block':
     'prefix': 'block'
     'body': '{% block ${1:name} %}\n\t$2\n{% endblock %}'
+    'description': 'block defines a section on the template and identifies it with a name. This is used by template inheritance. Base templates can specify blocks and child templates can override them with new content.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#block'
   'Complete Block':
     'prefix': '{%'
-    'body': '{% $0 %}'
+    'body': '{% $1 %'
+    'description': 'A nunjucks template block.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/'
   'Complete Variable':
     'prefix': '{{'
-    'body': '{{ $0 }}'
+    'body': '{{ ${1:variable} '
+    'description': 'A variable looks up a value from the template context.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#variables'
   'Extends':
     'prefix': 'extends'
-    'body': '{% extends ${1:"${2:template}"} %}'
+    'body': '{% extends "${1:template}" %}$2'
+    'description': 'extends is used to specify template inheritance. The specified template is used as a base template.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#extends'
   'Include':
-      'prefix': 'include'
-      'body': '{% include ${1:"${2:template}"} %}'
+    'prefix': 'include'
+    'body': '{% include "${1:template}" %}$2'
+    'description': 'Include pulls in other templates in place.It\'s useful when you need to share smaller chunks across several templates that already inherit other templates.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#include'
   'Filter':
     'prefix': 'filter'
     'body': '{% filter ${1:filter} %}\n\t$2\n{% endfilter %}'
+    'description': 'A filter block allows you to call a filter with the contents of the block. Instead passing a value with the | syntax, the render contents from the block will be passed.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#filter'
   'For':
     'prefix': 'for'
     'body': '{% for ${1:item} in ${2:sequence} %}\n\t$3\n{% endfor %}'
+    'description': 'for iterates over arrays and dictionaries.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#for'
   'asyncEach':
     'prefix': 'asyncEach'
     'body': '{% asyncEach ${1:item} in ${2:sequence} %}\n\t$3\n{% endeach %}'
+    'description': 'asyncEach is an asynchronous version of for. You only need this if you are using a custom template loader that is asynchronous; otherwise you will never need it. Async filters and extensions also need this, but internally loops are automatically converted into asyncEach if any async filters and extensions are used within the loop.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#asynceach'
   'asyncAll':
     'prefix': 'asyncAll'
-    'body': '{% asyncAll ${1:item} in ${2:sequence} %}\n\t$3\n{% endall %}'
+    'body': '{% asyncAll ${1:item} in ${2:sequence} %}\n\t$3\n{% endeach %}'
+    'description': 'asyncAll is similar to asyncEach, except it renders all the items in parallel, preserving the order of the items. This is only helpful if you are using asynchronous filters, extensions, or loaders. Otherwise you should never use this.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#asyncall'
   'If':
     'prefix': 'if'
-    'body': '{% if ${1:expr} %}\n\t$2\n{% endif %}'
+    'body': '{% if ${1:condition} %}\n\t$2\n{% endif %}'
+    'description': 'if tests a condition and lets you selectively display content. It behaves exactly as javascript\'s if behaves.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#if'
   'If Else':
     'prefix': 'ife'
-    'body': '{% if ${1:expr} %}\n\t$2\n{% else %}\n\t$3\n{% endif %}'
+    'body': '{% if ${1:condition} %}\n\t$2\n{% else %}\n\t$3\n{% endif %}'
+    'description': 'It creates the if else block.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#if'
+  'If Elif':
+    'prefix': 'ifel'
+    'body': '{% if ${1:condition} %}\n\t$2\n{% elif ${3:condition} %}\n\t$4\n{% else %}\n\t$5\n{% endif %}'
+    'description': 'Alternate condition with the if block'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#if'
+  'Elif':
+    'prefix': 'elif'
+    'body': '{% elif ${1:condition} %}\n\t$2'
+    'description': 'Alternate condition in the if block'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#if'
+  'Else':
+    'prefix': 'else'
+    'body': '{% else ${1:condition} %}\n\t$2'
+    'description': 'Alternate condition in the if block'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#if'
   'Set':
     'prefix': 'set'
-    'body': '{% set ${1:var} = ${2:value} %}$0'
+    'body': '{% set ${1:var} = ${2:value} %}$3'
+    'description': 'set lets you create/modify a variable.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#set'
   'Macro':
     'prefix': 'macro'
     'body': '{% macro ${1:name}(${2:args}) %}\n\t$3\n{% endmacro %}'
+    'description': 'macro allows you to define reusable chunks of content. It is similar to a function in a programming language. '
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#macro'
   'Import':
     'prefix': 'import'
-    'body': '{% import ${1:"${2:template}"} as ${3:var} %}$0'
+    'body': '{% import "${1:template}" as ${2:var} %}$3'
+    'description': 'import loads a different template and allows you to access its exported values. Macros and top-level assignments (done with set) are exported from templates, allowing you to access them in a different template.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#import'
   'From Import':
     'prefix': 'from'
-    'body': '{% from ${1:"${2:template}"} import ${3:macro} as ${4:var} %}$0'
+    'body': '{% from "${1:template}" import ${2:macro} as ${3:var} %}$4'
+    'description': 'It imports specific values from a template into the current namespace.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#import'
   'Raw':
     'prefix': 'raw'
     'body': '{% raw %}\n\t$1\n{% endraw %}'
+    'description': 'If you want to output any of the special nunjucks tags like {{, you can use raw and anything inside of it will be output as plain text.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#raw'
   'Call':
     'prefix': 'call'
     'body': '{% call ${1:macro} %}\n\t$2\n{% endcall %}'
-  'Elif':
-    'prefix': 'elif'
-    'body': '{% elif ${1:expr} %}\n\t$2'
-  'Else':
-    'prefix': 'else'
-    'body': '{% else ${1:expr} %}\n\t$2'
+    'description': 'A call block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. The content is available inside the macro as caller().'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#call'
   'Alt Variable':
     'prefix': 'var'
     'body': '{{ ${1:var} }}'
+    'description': 'A variable looks up a value from the template context. If you wanted to simply display a variable, you would do: {{ username }}'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#variables'
   'Super':
     'prefix': 'super'
     'body': '{{ super() }}'
+    'description': 'You can render the contents of the parent block inside a child block by calling super.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#super'
+  # Expressions
+  'Or':
+    'prefix': 'or'
+    'body': 'or'
+    'description': 'Logical or operator.'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#logic'
+  # # Filter blocks
+  'Pipe':
+    'prefix': 'pipe'
+    'body': '| ${1:filter}'
+    'description': 'You can pass filters from the variable directly e.g. {{ foo | escape }}'
+    'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#filters'
+  # This is a sample tag just in case someone wants to add more to it
+  # More Filters
+  # 'Name':
+  #   'prefix': ''
+  #   'body': ''
+  #   'description': ''
+  #   'descriptionMoreURL': ''

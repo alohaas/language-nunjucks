@@ -1,6 +1,6 @@
 {
   "name": "language-nunjucks",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "private": true,
   "description": "Syntax highlighting for nunjucks templates in the Atom editor.",
   "keywords": [

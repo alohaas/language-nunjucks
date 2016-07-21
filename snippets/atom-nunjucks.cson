@@ -95,7 +95,7 @@
     'description': 'If you want to output any of the special nunjucks tags like {{, you can use raw and anything inside of it will be output as plain text.'
     'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#raw'
   'Call':
-    'prefix': 'call'
+    'prefix': 'get'
     'body': '{% call ${1:macro} %}\n\t$2\n{% endcall %}'
     'description': 'A call block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. The content is available inside the macro as caller().'
     'descriptionMoreURL': 'http://mozilla.github.io/nunjucks/templating.html#call'

@@ -1,7 +1,8 @@
 'fileTypes': [
   'nunjucks'
   'Nunjucks'
-  'njk'
+  'njk',
+  'nunj'
 ]
 'firstLineMatch': '^{% extends ["\'][^"\']+["\'] %}'
 'foldingStartMarker': '(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(block|filter|for|if|macro|raw|asyncEach|asyncAll|call))'

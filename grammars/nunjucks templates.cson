@@ -4,7 +4,7 @@
 'name': 'Nunjucks Templates'
 'patterns': [
   {
-    'begin': '({%)\\s*(raw)\\s*(%})'
+    'begin': '({%-?)\\s*(raw)\\s*(-?%})'
     'captures':
       '1':
         'name': 'entity.other.nunjucks.delimiter.tag'
@@ -12,7 +12,7 @@
         'name': 'keyword.control.nunjucks'
       '3':
         'name': 'entity.other.nunjucks.delimiter.tag'
-    'end': '({%)\\s*(endraw)\\s*(%})'
+    'end': '({%-?)\\s*(endraw)\\s*(-?%})'
     'name': 'comment.block.nunjucks.raw'
   }
   {
